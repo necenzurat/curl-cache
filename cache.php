@@ -1,6 +1,6 @@
 <?php
     /*
-     * Caching something whit just one function
+     * Caching something with just one function
      * Licensed under WTFPL 
      */
 	function open($url){
