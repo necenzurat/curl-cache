@@ -1,11 +1,12 @@
 <?php
 /**
- * Caching something with just one function
- * Licensed under WTFPL 
- * @param string
- * @return mixed
+ * Caching the body of a HTTP response
+ * Licensed under WTFPL
+ * @param $url string
+ * @param $skip_cache bool
+ * @return mixed $data | FALSE
  */
-function cache_url($url) {
+function cache_url($url, $skip_cache = FALSE) {
 	// settings
 	$cachetime = 604800; //one week
 	$where = "cache";
@@ -24,7 +25,7 @@ function cache_url($url) {
 	$filetimemod = $mtime + $cachetime;
 	
 	// if the renewal date is smaller than now, return true; else false (no need for update)
-	if ($filetimemod < time()) {
+	if ($filetimemod < time() OR $skip_cache) {
 		$ch = curl_init($url);
 		curl_setopt_array($ch, array(
 			CURLOPT_HEADER         => FALSE,
@@ -39,7 +40,7 @@ function cache_url($url) {
 		curl_close($ch);
 		
 		// save the file if there's data
-		if ($data) {
+		if ($data AND ! $skip_cache) {
 			file_put_contents($file, $data);
 		}
 	} else {
