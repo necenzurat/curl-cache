@@ -1,5 +1,5 @@
 <?php
- 	/*
+    /*
      * Caching something whit just one function
      * Licensed under WTFPL 
      */
