@@ -3,9 +3,7 @@ Curl Cache
 
 A uber simple curl with caching for every type of urls. 
 ````
-There are only two hard things in Computer Science: cache invalidation and naming things.
-
--- Phil Karlton
+There are only two hard things in Computer Science: cache invalidation and naming things. -- Phil Karlton
 ````
 
 Usage
