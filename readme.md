@@ -13,7 +13,7 @@ Usage
 
 ````php
 require "my_awesome_direcotry_structure/cache.php";
-$data = cache_url('http://requestb.in/nub0zsnu', "appID=123&appKEY=321", TRUE);
+$data = cache_url('http://requestb.in/nub0zsnu', TRUE, 'appID=123&appKEY=32');
 ````
 
 
