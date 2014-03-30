@@ -11,7 +11,7 @@ There are only two hard things in Computer Science: cache invalidation and namin
 Usage
 =====
 
-````
+````php
 require "my_awesome_direcotry_structure/cache.php";
 $data = cache_url('http://requestb.in/nub0zsnu', "appID=123&appKEY=321", TRUE);
 ````
@@ -21,10 +21,10 @@ Settings
 =====
 
 cache.php, line 12 and line 13
-
+````php
 $cachetime = 43200; // 6hours, in seconds
 $where = "cache"; // the caching directory
-
+````
 
 License
 =====
